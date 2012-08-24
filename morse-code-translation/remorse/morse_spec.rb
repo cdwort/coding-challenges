@@ -1,15 +1,13 @@
-require 'morse_translator'
+require 'morse.rb'
 
-describe MorseTranslator, "#to_morse" do 
-  it "returns nil if all characters are not in the morse alphabet"
-    translator = MorseTranslator.new
-    code = translator.to_morse("alksd-ads..")
+describe Morse, "#to_morse" do 
+  it "returns nil if all characters are not in the morse alphabet" do
+    code = Morse.to_morse("alksd-ads..")
     code.should eq(nil)
   end
 
-  it "it returns the morse code for A when given A"
-    translator = MorseTranslator.new
-    code = translator.to_morse("A")
+  it "it returns the morse code for A when given A" do
+    code = Morse.to_morse("A")
     code.should eq(".-")
   end
 end
