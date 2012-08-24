@@ -11,7 +11,7 @@ class Morse
             'T' => '-', 'U' => '..-', 'V' => '...-', 'W' => '.--',
             'X' => '-..-', 'Y' => '-.--', 'Z' => '--..'
               }
-    puts letters['A']
+
     check(english_word)
     
     english_word.each_char do |l|
@@ -22,6 +22,6 @@ class Morse
   end
 
   def self.check(english_word)
-    true
+    english_word.gsub!(/[^A-Za-z]/, '')
   end
 end
